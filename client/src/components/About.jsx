@@ -11,7 +11,7 @@ const About = () => {
   const achievements = [
     { icon: FaDatabase, title: 'Data Processing', value: '1.8M+', desc: 'Records Analyzed' },
     { icon: FaChartLine, title: 'Efficiency', value: '30%', desc: 'Performance Boost' },
-    { icon: FaCode, title: 'Projects', value: '5+', desc: 'Completed' },
+    { icon: FaCode, title: 'Projects', value: '4', desc: 'Completed' },
     { icon: FaCloud, title: 'Cost Reduction', value: '10%', desc: 'Operational Costs' },
   ];
 
@@ -65,16 +65,13 @@ const About = () => {
         >
           <div className="space-y-6">
             <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700">
-              <h3 className="text-2xl font-bold text-white mb-4">📊 Who Am I?</h3>
+              <h3 className="text-2xl font-bold text-white mb-4"> Who Am I?</h3>
               <p className="text-gray-300 text-lg leading-relaxed mb-4">
-                I'm a passionate data analyst with a B.Tech in Computer Science (CGPA 8.3/10) from 
-                Centurion University. I specialize in transforming complex datasets into meaningful 
-                insights that drive business decisions.
+                I'm a passionate data analyst with a B.Tech in Computer Science from 
+                Centurion University.I specialize in transforming complex datasets into actionable insights that support data-driven decision making.
               </p>
               <p className="text-gray-300 text-lg leading-relaxed">
-                With expertise in SQL, Python, Power BI, and Excel, I've successfully delivered 
-                multiple projects handling up to 1.8 million records, achieving significant 
-                performance improvements and cost reductions.
+                Skilled in SQL, Python, Power BI, and Excel, I have worked on multiple data analysis projects involving large datasets. I focus on uncovering trends, optimizing performance, and building meaningful visualizations to solve real-world problems.I am continuously learning and improving my analytical skills, aiming to deliver impactful insights and grow as a data professional.
               </p>
             </div>
             
@@ -95,14 +92,15 @@ const About = () => {
               <h3 className="text-2xl font-bold text-white mb-4">🎓 Education</h3>
               <div className="space-y-4">
                 <div className="border-l-4 border-purple-500 pl-4">
-                  <p className="text-white font-semibold text-lg">B.Tech in Computer Science</p>
+                  <p className="text-white font-semibold text-lg">B.Tech in Computer Science (2023 – Present)</p>
                   <p className="text-gray-400">Centurion University Of Technology And Management</p>
                   <p className="text-purple-500 text-sm mt-1">CGPA: 8.3/10</p>
                 </div>
                 <div className="border-l-4 border-pink-500 pl-4">
-                  <p className="text-white font-semibold text-lg">Data Analytics Internship</p>
-                  <p className="text-gray-400">MedTourEasy</p>
-                  <p className="text-purple-500 text-sm mt-1">Oct 2023</p>
+                  <p className="text-white font-semibold text-lg">Intermediate of Science (PCMB)</p>
+                  <p className="text-gray-400">S.S. +2 Sukhi Semra College  </p>
+                  <p className="text-purple-500 text-sm mt-1">Year: 2023</p>
+                  <p className="text-purple-500 text-sm mt-1">Percentage: 73.79%</p>
                 </div>
               </div>
             </div>

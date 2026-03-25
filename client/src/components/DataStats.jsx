@@ -11,7 +11,7 @@ const DataStats = () => {
   const stats = [
     { icon: FaDatabase, label: 'Data Processed', value: '2.5M+', color: 'from-blue-500 to-cyan-500' },
     { icon: FaChartLine, label: 'Efficiency Gain', value: '35%', color: 'from-green-500 to-emerald-500' },
-    { icon: FaRocket, label: 'Projects Delivered', value: '8+', color: 'from-purple-500 to-pink-500' },
+    { icon: FaRocket, label: 'Projects Practiced', value: '10+', color: 'from-purple-500 to-pink-500' },
     { icon: FaTachometerAlt, label: 'Query Speed', value: '40%', color: 'from-orange-500 to-red-500' },
   ];
 

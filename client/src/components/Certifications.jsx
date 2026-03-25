@@ -21,7 +21,7 @@ const Certifications = () => {
       skills: ['SQL', 'Database Design', 'Query Optimization', 'Joins', 'Subqueries', 'CTEs'],
       icon: FaCertificate,
       color: 'from-blue-500 to-cyan-500',
-      duration: '40 hours',
+      
       level: 'Advanced'
     },
     {
@@ -33,7 +33,7 @@ const Certifications = () => {
       skills: ['Python', 'Pandas', 'NumPy', 'Data Visualization', 'Statistical Analysis'],
       icon: FaCertificate,
       color: 'from-green-500 to-emerald-500',
-      duration: '35 hours',
+   
       level: 'Advanced'
     },
     {
@@ -176,7 +176,7 @@ const Certifications = () => {
                   <FaCalendarAlt className="text-purple-500" />
                   <span>Issued: {cert.date}</span>
                   <span className="mx-1">•</span>
-                  <span>⏱️ {cert.duration}</span>
+                  <span> {cert.duration}</span>
                 </div>
                 
                 <div className="mb-3">

@@ -8,8 +8,8 @@ import Contact from './components/Contact';
 import LiveStats from './components/LiveStats';
 import SimpleBackground from './components/SimpleBackground';
 import DataStats from './components/DataStats';
-import FreeResources from './components/FreeResources';
 import Certifications from './components/Certifications';
+
 import './App.css';
 
 function App() {
@@ -49,7 +49,7 @@ function App() {
         <Skills />
         <Projects />
         <Certifications />
-        <FreeResources />
+       
         <Contact />
       </main>
       <LiveStats />

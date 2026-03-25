@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTelegram } from 'react-icons/fa';
 import axios from 'axios';
 
 const Contact = () => {
@@ -65,7 +65,7 @@ const Contact = () => {
             Get In Touch
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-4"></div>
-          <p className="text-gray-400 mt-4">I'd love to hear from you</p>
+          <p className="text-gray-400 mt-4"></p>
         </div>
         
         <div
@@ -87,17 +87,6 @@ const Contact = () => {
                     <p className="text-gray-400 text-sm">Email</p>
                     <a href="mailto:learncoding691@gmail.com" className="text-white hover:text-purple-500">
                       learncoding691@gmail.com
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center">
-                    <FaPhone className="text-purple-500 text-xl" />
-                  </div>
-                  <div>
-                    <p className="text-gray-400 text-sm">Phone</p>
-                    <a href="tel:+919876543210" className="text-white hover:text-purple-500">
-                      +91 98765 43210
                     </a>
                   </div>
                 </div>
@@ -131,6 +120,14 @@ const Contact = () => {
                   className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center hover:bg-purple-500 hover:text-white transition-all duration-300"
                 >
                   <FaLinkedin className="text-xl" />
+                </a>
+                <a
+                  href="https://t.me/Akkumarw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center hover:bg-purple-500 hover:text-white transition-all duration-300"
+                >
+                  <FaTelegram className="text-xl" />
                 </a>
               </div>
             </div>

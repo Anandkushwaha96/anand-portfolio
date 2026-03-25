@@ -16,16 +16,15 @@ const Projects = () => {
   
   const projects = [
     {
-      title: 'Consumer Goods Analytics',
-      description: 'Presented insights on 10 ad-hoc business requests to executive management, querying a database with 1.4 million rows using SQL. Generated actionable insights that potentially reduced operational costs by 10%.',
-      tech: ['MySQL', 'Excel'],
-      category: 'SQL',
-      github: 'https://github.com/anand-kumar/consumer-goods-analytics',
-      live: '#',
-      date: 'Apr 2024',
-      impact: '10% Cost Reduction',
-      dataSize: '1.4M Rows',
-      metrics: ['Cost Reduction: 10%', 'Query Optimization: 40%', 'Executive Reports: 10']
+      title: 'Netflix Data Analysis',
+      description: 'Performed end-to-end EDA on Netflix dataset using Python ,Pandas.Identified trends in content type, genre distribution, and country-wise production.Built visualizations to highlight yearly growth and audience insights.',
+      tech: ['Python', 'Pandas'],
+      category: 'Python',
+      github: 'https://github.com/Anandkushwaha96/Netflix-Data-Analysis-main.git',
+      date: 'Jan 2026',
+      impact: 'Trend & Pattern Insights',
+      dataSize: '8800+ Titles',
+      metrics: ['Genre Analysis: 20+ Genres', 'Content Distribution:Movie Vs Tv Shows', 'Year-wise Growth Trends']
     },
     {
       title: 'Business Insight 360',
@@ -33,8 +32,7 @@ const Projects = () => {
       tech: ['Power BI', 'MySQL', 'Excel', 'DAX Studio'],
       category: 'Power BI',
       github: 'https://github.com/Anandkushwaha96/Business-Insight-360-Brick-Mortar-and-E-Commerce.git',
-      live: '#',
-      date: 'Mar 2024',
+      date: 'Nov 2025',
       impact: '30% Efficiency Boost',
       dataSize: '1.8M Records',
       metrics: ['Efficiency: +30%', 'Performance: +10%', 'Departments: 3']
@@ -46,7 +44,7 @@ const Projects = () => {
       category: 'Power BI',
       github: 'https://github.com/Anandkushwaha96/Power-BI_AtliQ-Hospitality.git',
       live: 'https://tinyurl.com/anandku23',
-      date: 'Mar 2024',
+      date: 'Dec 2025',
       impact: '20% Revenue Target',
       dataSize: '3 Months Data',
       metrics: ['Revenue Target: +20%', 'Industry Presence: +20%', 'Dashboard Views: 5']
@@ -57,8 +55,7 @@ const Projects = () => {
       tech: ['Excel', 'Power Query', 'DAX', 'Pivot Tables'],
       category: 'Excel',
       github: 'https://github.com/Anandkushwaha96/-Excel-Sales-and-Finance-Analytics-Project-of-AtliQ-Hardwares.git',
-      live: '#',
-      date: 'Feb 2024',
+      date: 'Jan 2026',
       impact: '4 Hours Saved',
       dataSize: '1.8M Records',
       metrics: ['Time Saved: 4h/week', 'Automation: 100%', 'User Experience: Improved']
@@ -167,18 +164,21 @@ const Projects = () => {
                     onClick={(e) => e.stopPropagation()}
                   >
                     <FaGithub />
-                    Code
+                    Github Repository
                   </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-gray-400 hover:text-purple-500 transition-colors"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <FaExternalLinkAlt />
-                    Live Demo
-                  </a>
+                  {/* Only show Live Demo for Hospitality Analysis */}
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-gray-400 hover:text-purple-500 transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <FaExternalLinkAlt />
+                      Live Dashboard
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -241,11 +241,14 @@ const Projects = () => {
                 
                 <div className="flex gap-4">
                   <a href={selectedProject.github} target="_blank" rel="noopener noreferrer" className="flex-1 text-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-purple-500 transition-colors">
-                    View Code
+                    Github Repository
                   </a>
-                  <a href={selectedProject.live} target="_blank" rel="noopener noreferrer" className="flex-1 text-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:shadow-lg transition-all">
-                    Live Demo
-                  </a>
+                  {/* Only show Live Dashboard button in modal for Hospitality Analysis */}
+                  {selectedProject.live && (
+                    <a href={selectedProject.live} target="_blank" rel="noopener noreferrer" className="flex-1 text-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:shadow-lg transition-all">
+                      Live Dashboard
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

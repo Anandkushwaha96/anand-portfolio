@@ -39,8 +39,8 @@ const Hero = () => {
   
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'Anand_Resume.pdf';
+    link.href = '/anand23.pdf';
+    link.download = '/anand23.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -75,25 +75,8 @@ const Hero = () => {
               <span className="text-purple-500 font-semibold">{text}</span>
             </div>
             <p className="text-gray-400 text-lg mb-8 max-w-xl mx-auto md:mx-0">
-              Transforming complex data into actionable insights with Python, SQL, and Power BI. 
-              1.8M+ records analyzed | 30% efficiency improvement | Data-driven decision maker
+              Turning data into clear and meaningful insights using Python, SQL, and Power BI.
             </p>
-            
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 mb-8 max-w-md mx-auto md:mx-0">
-              <div className="bg-white/5 backdrop-blur-sm rounded-lg p-3">
-                <p className="text-2xl font-bold text-purple-500">5+</p>
-                <p className="text-xs text-gray-400">Projects</p>
-              </div>
-              <div className="bg-white/5 backdrop-blur-sm rounded-lg p-3">
-                <p className="text-2xl font-bold text-purple-500">1.8M+</p>
-                <p className="text-xs text-gray-400">Records</p>
-              </div>
-              <div className="bg-white/5 backdrop-blur-sm rounded-lg p-3">
-                <p className="text-2xl font-bold text-purple-500">30%</p>
-                <p className="text-xs text-gray-400">Efficiency</p>
-              </div>
-            </div>
             
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -112,36 +95,6 @@ const Hero = () => {
                 Contact Me
                 <FaEnvelope />
               </a>
-            </div>
-            
-            {/* Social Links */}
-            <div className="flex gap-6 justify-center md:justify-start mt-8">
-              <a
-                href="https://github.com/Anandkushwaha96"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-purple-500 transition-all duration-300 text-2xl hover:scale-110 transform"
-              >
-                <FaGithub />
-              </a>
-              <a
-                href="https://linkedin.com/in/anandkushwaha23"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-purple-500 transition-all duration-300 text-2xl hover:scale-110 transform"
-              >
-                <FaLinkedin />
-              </a>
-              <a
-                href="mailto:learncoding691@gmail.com"
-                className="text-gray-400 hover:text-purple-500 transition-all duration-300 text-2xl hover:scale-110 transform"
-              >
-                <FaEnvelope />
-              </a>
-              <div className="flex items-center gap-2 text-gray-400">
-                <FaMapMarkerAlt />
-                <span className="text-sm">India</span>
-              </div>
             </div>
           </div>
           
@@ -171,7 +124,7 @@ const Hero = () => {
               {/* Single Floating Badge */}
               <div className="absolute -top-5 -right-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full p-2 shadow-lg animate-bounce">
                 <div className="bg-white rounded-full px-3 py-1 text-sm font-bold text-purple-600">
-                  📊 Data Analyst
+                  Data Analyst
                 </div>
               </div>
             </div>

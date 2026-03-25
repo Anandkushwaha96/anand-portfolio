@@ -15,7 +15,7 @@ const Skills = () => {
       level: 90, 
       color: 'from-blue-500 to-blue-600',
       description: 'Complex queries, optimization, joins, CTEs, window functions',
-      projects: '5+ projects',
+      projects: '4 projects',
       icon: '🗄️'
     },
     { 
