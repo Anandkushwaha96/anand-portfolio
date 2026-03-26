@@ -170,3 +170,23 @@ app.listen(PORT, () => {
   console.log(`📊 Admin panel: http://localhost:${PORT}/admin`);
   console.log(`✅ Ready to receive messages!\n`);
 });
+
+
+
+
+// Resume download endpoint - Forces download on all devices
+app.get('/api/download-resume', (req, res) => {
+  const filePath = path.join(__dirname, '../client/public/anand23.pdf');
+  
+  // Set headers to force download
+  res.setHeader('Content-Type', 'application/pdf');
+  res.setHeader('Content-Disposition', 'attachment; filename="Anand_Kumar_Resume.pdf"');
+  res.setHeader('Cache-Control', 'no-cache');
+  
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.error('Download error:', err);
+      res.status(404).send('File not found');
+    }
+  });
+});
