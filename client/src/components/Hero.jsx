@@ -66,7 +66,7 @@ const Hero = () => {
               </span>
             </h1>
             <div className="text-2xl md:text-3xl mb-6 h-20">
-              <span className="text-gray-300">I'm a </span>
+              <span className="text-gray-300"></span>
               <span className="text-purple-500 font-semibold">{text}</span>
             </div>
             <p className="text-gray-400 text-lg mb-8 max-w-xl mx-auto md:mx-0">
