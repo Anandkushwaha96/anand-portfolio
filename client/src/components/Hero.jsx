@@ -3,7 +3,6 @@ import { FaGithub, FaLinkedin, FaDownload, FaEnvelope, FaMapMarkerAlt } from 're
 
 const Hero = () => {
   const [text, setText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
   const roles = ['Data Analyst 📊'];
   
   useEffect(() => {
@@ -37,13 +36,32 @@ const Hero = () => {
     type();
   }, []);
   
-  const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = '/anand23.pdf';
-    link.download = '/anand23.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleDownload = async () => {
+    try {
+      // Fetch the PDF file
+      const response = await fetch('/anand23.pdf');
+      const blob = await response.blob();
+      
+      // Create a blob URL
+      const blobUrl = window.URL.createObjectURL(blob);
+      
+      // Create download link
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.download = 'Anand_Kumar_Resume.pdf';
+      
+      // Append to body, click, and remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Clean up the blob URL
+      window.URL.revokeObjectURL(blobUrl);
+    } catch (error) {
+      console.error('Error downloading resume:', error);
+      // Fallback: Open in new tab
+      window.open('/anand23.pdf', '_blank');
+    }
   };
   
   return (
@@ -71,7 +89,7 @@ const Hero = () => {
               </span>
             </h1>
             <div className="text-2xl md:text-3xl mb-6 h-20">
-              <span className="text-gray-300"> </span>
+              <span className="text-gray-300">I'm a </span>
               <span className="text-purple-500 font-semibold">{text}</span>
             </div>
             <p className="text-gray-400 text-lg mb-8 max-w-xl mx-auto md:mx-0">
@@ -124,7 +142,7 @@ const Hero = () => {
               {/* Single Floating Badge */}
               <div className="absolute -top-5 -right-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full p-2 shadow-lg animate-bounce">
                 <div className="bg-white rounded-full px-3 py-1 text-sm font-bold text-purple-600">
-                  Data Analyst
+                  📊 Data Analyst
                 </div>
               </div>
             </div>
