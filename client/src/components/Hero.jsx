@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaDownload, FaEnvelope } from 'react-icons/fa';
-import { downloadResume } from '../utils/downloadHelper';
+//import { downloadResume } from '../utils/downloadHelper';
 
 const Hero = () => {
   const [text, setText] = useState('');
@@ -37,9 +37,9 @@ const Hero = () => {
     type();
   }, []);
   
-  const handleDownload = () => {
-    downloadResume();
-  };
+ const handleDownload = () => {
+  window.open('/download.html', '_blank');
+};
   
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
