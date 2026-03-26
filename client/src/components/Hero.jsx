@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { FaGithub, FaLinkedin, FaDownload, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaDownload, FaEnvelope } from 'react-icons/fa';
+import { downloadResume } from '../utils/downloadHelper';
 
 const Hero = () => {
   const [text, setText] = useState('');
@@ -36,32 +37,8 @@ const Hero = () => {
     type();
   }, []);
   
-  const handleDownload = async () => {
-    try {
-      // Fetch the PDF file
-      const response = await fetch('/anand23.pdf');
-      const blob = await response.blob();
-      
-      // Create a blob URL
-      const blobUrl = window.URL.createObjectURL(blob);
-      
-      // Create download link
-      const link = document.createElement('a');
-      link.href = blobUrl;
-      link.download = 'Anand_Kumar_Resume.pdf';
-      
-      // Append to body, click, and remove
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      
-      // Clean up the blob URL
-      window.URL.revokeObjectURL(blobUrl);
-    } catch (error) {
-      console.error('Error downloading resume:', error);
-      // Fallback: Open in new tab
-      window.open('/anand23.pdf', '_blank');
-    }
+  const handleDownload = () => {
+    downloadResume();
   };
   
   return (
