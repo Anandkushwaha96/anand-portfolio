@@ -3,7 +3,7 @@ export const downloadResume = async () => {
     console.log('Starting download...');
     
     // Fetch the PDF file
-    const response = await fetch('/anand23.pdf');
+    const response = await fetch('/public/anand23.pdf');
     
     if (!response.ok) {
       throw new Error('File not found');
