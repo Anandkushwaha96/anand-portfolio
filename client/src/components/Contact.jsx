@@ -34,21 +34,28 @@ const Contact = () => {
     setStatus({ ...status, loading: true });
     
     try {
-      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      // Use the live backend URL directly
+      const API_URL = 'https://anand-portfolio-api.onrender.com';
       const response = await axios.post(`${API_URL}/api/contact`, formData);
+      
+      console.log('Response:', response.data);
+      
       setStatus({
         submitted: true,
         loading: false,
         success: true,
-        message: 'Message sent successfully!'
+        message: response.data.message || '✅ Message sent successfully!'
       });
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
+      console.error('Error details:', error);
+      console.error('Error response:', error.response);
+      
       setStatus({
         submitted: true,
         loading: false,
         success: false,
-        message: error.response?.data?.message || 'Something went wrong. Please try again.'
+        message: error.response?.data?.message || '❌ Something went wrong. Please try again.'
       });
     }
     
@@ -65,7 +72,7 @@ const Contact = () => {
             Get In Touch
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-4"></div>
-          <p className="text-gray-400 mt-4"></p>
+          <p className="text-gray-400 mt-4">I'd love to hear from you</p>
         </div>
         
         <div
@@ -147,6 +154,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 text-white"
+                  placeholder="Enter your name"
                 />
               </div>
               <div>
@@ -159,6 +167,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 text-white"
+                  placeholder="Enter your email"
                 />
               </div>
               <div>
@@ -171,6 +180,7 @@ const Contact = () => {
                   required
                   rows="5"
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 text-white"
+                  placeholder="Write your message here..."
                 ></textarea>
               </div>
               <button
@@ -178,7 +188,7 @@ const Contact = () => {
                 disabled={status.loading}
                 className="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105 disabled:opacity-50"
               >
-                {status.loading ? 'Sending...' : 'Send Message'}
+                {status.loading ? '📧 Sending...' : '✉️ Send Message'}
               </button>
               {status.submitted && (
                 <div className={`p-3 rounded-lg text-center ${
