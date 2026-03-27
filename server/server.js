@@ -6,8 +6,16 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors());
+// ✅ FIXED CORS - Allow all origins (important for Cloudflare Pages)
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+}));
+
+// Handle preflight requests
+app.options('*', cors());
+
 app.use(express.json());
 
 // MongoDB Schema
@@ -20,7 +28,7 @@ const contactSchema = new mongoose.Schema({
 
 const Contact = mongoose.model('Contact', contactSchema);
 
-// MongoDB Connection (use local MongoDB first for testing)
+// MongoDB Connection
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio';
 
 mongoose.connect(MONGODB_URI)
@@ -99,6 +107,23 @@ app.get('/api/messages', async (req, res) => {
   }
 });
 
+// Resume download endpoint - Forces download on all devices
+app.get('/api/download-resume', (req, res) => {
+  const filePath = path.join(__dirname, '../client/public/anand23.pdf');
+  
+  // Set headers to force download
+  res.setHeader('Content-Type', 'application/pdf');
+  res.setHeader('Content-Disposition', 'attachment; filename="Anand_Kumar_Resume.pdf"');
+  res.setHeader('Cache-Control', 'no-cache');
+  
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.error('Download error:', err);
+      res.status(404).send('File not found');
+    }
+  });
+});
+
 // Simple admin page
 app.get('/admin', (req, res) => {
   res.send(`
@@ -169,24 +194,4 @@ app.listen(PORT, () => {
   console.log(`📝 Contact endpoint: POST http://localhost:${PORT}/api/contact`);
   console.log(`📊 Admin panel: http://localhost:${PORT}/admin`);
   console.log(`✅ Ready to receive messages!\n`);
-});
-
-
-
-
-// Resume download endpoint - Forces download on all devices
-app.get('/api/download-resume', (req, res) => {
-  const filePath = path.join(__dirname, '../client/public/anand23.pdf');
-  
-  // Set headers to force download
-  res.setHeader('Content-Type', 'application/pdf');
-  res.setHeader('Content-Disposition', 'attachment; filename="Anand_Kumar_Resume.pdf"');
-  res.setHeader('Cache-Control', 'no-cache');
-  
-  res.sendFile(filePath, (err) => {
-    if (err) {
-      console.error('Download error:', err);
-      res.status(404).send('File not found');
-    }
-  });
 });
