@@ -55,7 +55,7 @@ const Contact = () => {
         submitted: true,
         loading: false,
         success: false,
-        message: error.response?.data?.message || '❌ Something went wrong. Please try again.'
+        message: error.response?.data?.message || ' free trial has expired. The server will be activated after payment. Please contact through telegram.'
       });
     }
     
