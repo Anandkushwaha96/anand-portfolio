@@ -35,7 +35,7 @@ const Contact = () => {
     
     try {
       // Use the live backend URL directly
-      const API_URL = 'https://anand-portfolio-api.onrender.com';
+      const API_URL = 'https://anand-portfolio-lbwj.onrender.com';
       const response = await axios.post(`${API_URL}/api/contact`, formData);
       
       console.log('Response:', response.data);
@@ -55,7 +55,7 @@ const Contact = () => {
         submitted: true,
         loading: false,
         success: false,
-        message: error.response?.data?.message || ' free trial has expired. The server will be activated after payment. Please contact through telegram.'
+        message: error.response?.data?.message || '❌ free trial has expired. The server will be activated after payment. Please contact through telegram.'
       });
     }
     
@@ -72,7 +72,7 @@ const Contact = () => {
             Get In Touch
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-4"></div>
-          <p className="text-gray-400 mt-4">I'd love to hear from you</p>
+          <p className="text-gray-400 mt-4"></p>
         </div>
         
         <div
